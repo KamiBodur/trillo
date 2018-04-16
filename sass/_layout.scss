@@ -26,10 +26,16 @@
     background-color: var(--color-grey-dark-1);
 
     flex: 0 0 18%;
+
+    // here we have changed the MAIN AXIS direction and then we are able to create space between legal text and sied-nav using justify-content which works only on the MAIN AXIS
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .hotel-view {
     background-color: #fff;
+    height: 80rem;
 
     flex:1;
 }
