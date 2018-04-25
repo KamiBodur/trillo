@@ -5,6 +5,15 @@
     box-shadow: var(--shadow-dark);
 
     min-height: 50rem;
+
+    // Desktop first strategy and breakpoint when the design collapse!
+    // we have to mix variables [css and sass] because css doesn't allow to use variables in media queries!
+    @media only screen and (max-width: $bp-largest) {
+        margin: 0;
+        // we change this two below to 100% since we have font-size of 50% of previous value and that give us 8px (it is 50% of 16px) and the max-width of 960px (120rem * 8px = 960px)!!!
+        max-width: 100%;
+        width: 100%;
+    }
 }
 
 .header {
@@ -20,6 +29,10 @@
 
 .content {
     display: flex;
+
+    @media only screen and (max-width: $bp-medium) {
+        flex-direction: column;
+    }
 }
 
 .sidebar {
@@ -45,6 +58,10 @@
     padding: 4.5rem;
     background-color: var( --color-grey-light-1);
     border-bottom: var(--line);
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+    }
 }
 
 .description {
@@ -53,6 +70,11 @@
     padding: 3rem;
     flex: 0 0 60%;
     margin-right: 4.5rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-right: 3rem;
+    }
 }
 
 .user-reviews {
